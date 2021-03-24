@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
+import { Button } from '@material-ui/core';
+
+// import MenuIcon from "@material-ui/icons/Menu";
+
 
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
-    margin: "1%"
+    margin: "1%",
+    justifyContent: 'flex-end'
   }
 })
 
@@ -16,38 +19,22 @@ export default function Nav() {
 
   return (
     <div className={classes.root} >
+      <right>
       <Grid container spacing={5}>
-        <Grid item xs={2}>
-          <Link component={RouterLink} to="/"
-          variant="body2" color="inherit">
-          Home
-          </Link>
+        <Grid item xs={3}>
+          <Button onClick={evet => window.location.href="/"} variant="outlined" >HOME</Button>
         </Grid>
-        <Grid item xs={2}>
-          <Link component={RouterLink} to="/experience"
-          variant="body2" color="inherit">
-          Experience
-          </Link>
+        <Grid item xs={3}>
+          <Button onClick={evet => window.location.href="/"} variant="outlined" >JOURNEY</Button>
         </Grid>
-        <Grid item xs={2}>
-          <Link component={RouterLink} to="/education"
-          variant="body2" color="inherit">
-          Education
-          </Link>
+        <Grid item xs={3}>
+          <Button onClick={evet => window.location.href="/projects"} variant="outlined" >PROJECTS</Button>
         </Grid>
-        <Grid item xs={2}>
-          <Link component={RouterLink} to="/projects"
-          variant="body2" color="inherit">
-          Projects
-          </Link>
+        <Grid item xs={3}>
+          <Button onClick={evet => window.location.href="/"} variant="outlined" >CONTACT ME!</Button>
         </Grid>
-        <Grid item xs={2}>
-          <Link component={RouterLink} to="/resume"
-          variant="body2" color="inherit">
-          Resume
-          </Link>
-        </Grid>
-      </Grid>     
+      </Grid>
+      </right>    
     </div>
     );
   }

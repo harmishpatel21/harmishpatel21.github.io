@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
-import Nav from './components/Nav';
+// import Nav from './components/Nav';
+import Header from './components/Header';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import Projects from './pages/Projects';
@@ -32,7 +33,8 @@ export default function App() {
       <CssBaseline />      
       <Container className={classes.root}>
         <Box my={5}>
-          <Nav />
+          {/* <Nav /> */}
+          <Header />
         </Box>
         <Route exact path="/" component={Home} />
         <Route path="/projects" component={Projects} />

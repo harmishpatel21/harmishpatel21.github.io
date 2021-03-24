@@ -157,28 +157,6 @@ export default function Home() {
 					</CardContent>
 				</Card>
 			</Grid>
-			{/* <Grid item>
-				<Card className={classes.root}>
-					<CardContent>
-						<Typography variant="h5" component="h2">
-							Blog Posts
-						</Typography>
-						<CardActions className={classes.paper}>
-							{blogPosts.map((item) => (
-								<Button
-									key={blogPosts.indexOf(item)}
-									className={classes.items}
-									href={item.href}
-									aria-label={item.title}
-									variant="outlined"
-								>
-									<strong>{item.title}</strong>
-								</Button>
-							))}
-						</CardActions>
-					</CardContent>
-				</Card>
-			</Grid> */}
 		</Grid>
 	);
 }

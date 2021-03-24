@@ -8,6 +8,10 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Icon from '@material-ui/core/Icon';
 import Link from '@material-ui/core/Link';
+import Popup from 'reactjs-popup';
+
+// import 'reactjs-popup/dist/index.css';
+// import { Description } from '@material-ui/icons';
 
 const useStyles = makeStyles({
   root: {
@@ -23,6 +27,10 @@ const useStyles = makeStyles({
   },
   content: {
     alignContent: "top"
+  },
+  popupDescription: {
+    width: "100%",
+    height: "100%"
   }
 });
 
@@ -47,13 +55,28 @@ const ProjectCard = props =>  {
       </CardActionArea>
         <CardContent className={classes.content}>
           <Typography gutterBottom variant="h5" component="h2">
-            {title}
+           <center> {title} </center>
           </Typography>
-          {/* <Typography variant="body1" color="textSecondary" component="p">
-            {description}
-          </Typography> */}
           <Typography variant="body1" color="textSecondary" component="p" className={classes.caps}>
-            {technology}
+           <center>{technology}</center> 
+          </Typography>
+          <br/>
+          <Typography variant="body1" color="textSecondary" component="p" className={classes.popup}>
+          <center>
+              <Popup 
+              className="popupDescription"
+              trigger={<Button className="button" variant="contained">Description</Button>} 
+              wide='Very'
+              model nested 
+              position="right">
+                    <ul>
+                      {description.map(a => 
+                        <li>
+                          {a}
+                        </li> )}
+                    </ul>
+              </Popup>
+            </center>
           </Typography>
         </CardContent>
       <CardActions>
