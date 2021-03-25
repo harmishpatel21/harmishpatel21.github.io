@@ -9,6 +9,7 @@ import Projects from './pages/Projects';
 import ResumePage from './pages/ResumePage';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import Journey from './pages/Journey';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -37,6 +38,7 @@ export default function App() {
           <Header />
         </Box>
         <Route exact path="/" component={Home} />
+        {/* <Route exact path="/journey" component={Journey}/> */}
         <Route path="/projects" component={Projects} />
         <Route path="/resume" component={ResumePage} />
         <footer className={classes.footer}>

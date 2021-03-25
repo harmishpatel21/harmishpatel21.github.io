@@ -58,6 +58,58 @@ export const skills = [
     
 ];
 
+export const journey = [
+    {   
+        label: "Work",
+        title: "Data Science Intern",
+        companyName: "University of Windsor",
+        date: "Sep 2020 - Dec 2020",
+        location: "Windsor, Canada",
+        technology: "Python, Shell-Script, Flask, GitHub, PyTorch, Transformers, Deep learning, OCR",
+        description: ['a','b'],
+    },
+    {
+        label: "School",
+        degree: "Masters",
+        title: "Master of Applied Computing",
+        specialization: "Artificial Intelligence",
+        university: "University of Windsor",
+        date: "Sep 2019 - Dec 2020",
+        location: "Windsor, Canada",
+        coursework: "Deep Learning for Computer Vision and NLP, Topics in Applied Artificial Intelligence",
+    },
+    {
+        label: "Work",
+        title: "Data Science Intern",
+        companyName: "Embibe Indiavidiual Learning PVT. LTD.",
+        date: "Dec 2018 - Apr 2019",
+        location: "Bengaluru, India",
+        technology: "Python, PySpark, Shell-Script, Atlassian BitBucket, Machine Learning, SVM, NLP, AWS",
+        description: ['a','b'],
+    },
+    {
+        label: "Work",
+        title: "Research & Development and Data Analytics Intern",
+        companyName: "ValeurHR E-Solution",
+        date: "May 2017 - Jun 2017",
+        location: "Ahmedabad, India",
+        technology: "Python, Flask, AngularJS, Time-series analysis, Machine learning",
+        description: ['a','b'],
+    },
+    {
+        label: "School",
+        degree: "Bachelors of Technology",
+        title: "Computer Science and Engineering",
+        specialization: "Big Data and Analytics",
+        university: "Ganpat University",
+        date: "Aug 2015 - May 2019",
+        location: "Ahmedabad, India",
+        coursework: "Data Science and Data Modeling (Statistical Modelling), Machine Learning, Data Warehouse and Data Mining, Big Data Analytics, Business Intelligence",
+    }
+
+]
+
+
 export const experience = [
     {
         title: "Data Science Intern",

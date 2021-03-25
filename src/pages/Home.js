@@ -112,7 +112,7 @@ export default function Home() {
                                     I possess a strong <strong>quantitative as well as ML/DL background</strong>, with bachelor's in <strong>computer
                                     science with majors in Big Data and Analytics</strong> and <strong>master's in Applied Computing with AI specialization.</strong> 
                                     I take pride in my ability to manipulate <code>large datasets</code>, <code>robust predictive analytics</code>, and turning them into actionable 
-                                    <strong>solutions and strategies for business.</strong>
+                                    <strong> solutions and strategies for business.</strong>
                                 </li>
                                 <br/>
                                 <li>
@@ -126,7 +126,7 @@ export default function Home() {
                                 <br/>
                                 <li>
                                     Experience working with <code>decision based modeling</code>, <code>bayesian/probabilistic methods</code>, <code>gradient boosting method</code>,
-                                    <code>advance statistical modelling</code>, and <code>hypothesis testing along with predictive</code>, <code>prescriptive & quantitative analysis</code>.
+                                    <code>advance statistical modelling</code>, and <code>hypothesis testing</code> along with <code>predictive, prescriptive & quantitative analysis</code>.
                             
                                 </li>
                                 <br/>

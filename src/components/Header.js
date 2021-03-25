@@ -20,7 +20,7 @@ import {
     },
     {
       label: "Journey",
-      href: "/experience",
+      href: "/journey",
     },
     {
       label: "Projects",
