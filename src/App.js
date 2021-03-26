@@ -38,7 +38,7 @@ export default function App() {
           <Header />
         </Box>
         <Route exact path="/" component={Home} />
-        {/* <Route exact path="/journey" component={Journey}/> */}
+        <Route exact path="/journey" component={Journey}/>
         <Route path="/projects" component={Projects} />
         <Route path="/resume" component={ResumePage} />
         <footer className={classes.footer}>
