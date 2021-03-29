@@ -13,24 +13,27 @@ import {
   import React, { useState, useEffect } from "react";
   import { Link as RouterLink } from "react-router-dom";
   
-  const headersData = [
-    {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "Journey",
-      href: "/journey",
-    },
-    {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Contact Me!",
-      href: "/contactme",
-    },
-  ];
+  import { headersData } from '../services/headersData';
+
+  // const headersData = [
+  //   {
+  //     label: "Home",
+  //     href: "/",
+  //   },
+  //   {
+  //     label: "Journey",
+  //     href: "/journey",
+  //   },
+  //   {
+  //     label: "Projects",
+  //     href: "/projects",
+  //   },
+
+  //   {
+  //     label: "Contact Me!",
+  //     href: "/contactme",
+  //   },
+  // ];
   
   const useStyles = makeStyles(() => ({
     header: {

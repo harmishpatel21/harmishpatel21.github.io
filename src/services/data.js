@@ -5,6 +5,7 @@ export const data = {
     profilePic: "profilePic.png",
     linkedin: "https://www.linkedin.com/in/harmish2111patel/",
     github: "https://github.com/harmishpatel21",
+    instagram: "https://www.instagram.com/heisenberg_.21/"
 };
 
 const githubRepos = {
@@ -237,6 +238,12 @@ export const contactItems = [
         href: data.github,
         icon: "fa fa-github",
         text: "Github",
+    },
+    {
+        href: data.instagram,
+        icon: "fa fa-instagram",
+        text: "Instagram"
+
     }
 ];
 

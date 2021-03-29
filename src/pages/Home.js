@@ -110,8 +110,8 @@ export default function Home() {
                             <ul>
                                 <li>
                                     I possess a strong <strong>quantitative as well as ML/DL background</strong>, with bachelor's in <strong>computer
-                                    science with majors in Big Data and Analytics</strong> and <strong>master's in Applied Computing with AI specialization.</strong> 
-                                    I take pride in my ability to manipulate <code>large datasets</code>, <code>robust predictive analytics</code>, and turning them into actionable 
+                                    science with majors in Big Data and Analytics</strong> and <strong>master's in Applied Computing with AI specialization. </strong> 
+                                     I take pride in my ability to manipulate <code>large datasets</code>, <code>robust predictive analytics</code>, and turning them into actionable 
                                     <strong> solutions and strategies for business.</strong>
                                 </li>
                                 <br/>
@@ -156,7 +156,7 @@ export default function Home() {
 						</CardActions>
 					</CardContent>
 				</Card>
-			</Grid>
+				</Grid>
 		</Grid>
 	);
 }

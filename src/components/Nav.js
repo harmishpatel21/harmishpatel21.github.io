@@ -31,6 +31,9 @@ export default function Nav() {
           <Button onClick={evet => window.location.href="/projects"} variant="outlined" >PROJECTS</Button>
         </Grid>
         <Grid item xs={3}>
+          <Button onClick={evet => window.location.href="/certification"} variant="outlined" >CERTIFICATIONS</Button>
+        </Grid>
+        <Grid item xs={3}>
           <Button onClick={evet => window.location.href="/"} variant="outlined" >CONTACT ME!</Button>
         </Grid>
       </Grid>
