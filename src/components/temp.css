@@ -1,0 +1,44 @@
+.my-popup-content {
+    margin: auto;
+    background: rgb(255, 255, 255);
+    width: 50%;
+    padding: 5px;
+  }
+  .my-popup-arrow {
+    color: rgb(255, 255, 255);
+  }
+  [role='tooltip'].my-popup-content {
+    width: 100px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+  }
+  
+  .my-popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    border-style: none;
+  }
+  [data-popup='tooltip'].my-popup-overlay {
+    background: transparent;
+  }
+
+  /* animation */
+
+@keyframes anvil {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  1% {
+    transform: scale(0.96) translateY(10px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+    box-shadow: 0 0 100px rgba(241, 241, 241, 0);
+  }
+}
+.my-popup-content {
+  -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+}
