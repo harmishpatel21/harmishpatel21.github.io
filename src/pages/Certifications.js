@@ -15,12 +15,13 @@ const useStyles = makeStyles({
 
 export default function Certifications() {
   const classes = useStyles();
+ 
     return (
-      <Grid container spacing={2} className={classes.root}>
-        {certification.map(c => 
-        <Grid item sm={4} key={certification.indexOf(c)}>
-          <CertificationCard c={c} />
-        </Grid>)}
-      </Grid>
+            <Grid container spacing={2} className={classes.root}>
+            {certification.map(c => 
+            <Grid item sm={4} key={certification.indexOf(c)}>
+              <CertificationCard c={c} />
+            </Grid>)}
+          </Grid>   
   );
 }

@@ -10,9 +10,14 @@ import Typography from '@material-ui/core/Typography';
 import Icon from '@material-ui/core/Icon';
 import Link from '@material-ui/core/Link';
 import Popup from 'reactjs-popup';
+import '../components/temp.css';
+// import 'reactjs-popup/dist/index.css';
+
 
 // import 'reactjs-popup/dist/index.css';
 // import { Description } from '@material-ui/icons';
+
+
 
 const useStyles = makeStyles({
   root: {
@@ -29,10 +34,7 @@ const useStyles = makeStyles({
   content: {
     alignContent: "top"
   },
-  popupDescription: {
-    width: "100%",
-    height: "100%"
-  }
+
 });
 
 const ProjectCard = props =>  {
@@ -65,17 +67,19 @@ const ProjectCard = props =>  {
           <Typography variant="body1" color="textSecondary" component="p" className={classes.popup}>
           <center>
               <Popup 
-              className="popupDescription"
+              className="my-popup"
               trigger={<Button className="button" variant="contained">Description</Button>} 
-              wide='Very'
-              model nested 
-              position="right">
-                    <ul>
-                      {description.map(a => 
-                        <li>
-                          {a}
-                        </li> )}
-                    </ul>
+              wide='very'
+              modal='true' 
+              >
+              <div>
+                <ul>
+                  {description.map(a => 
+                    <li>
+                      {a}
+                    </li> )}
+                </ul>
+              </div>
               </Popup>
             </center>
           </Typography>
@@ -84,11 +88,11 @@ const ProjectCard = props =>  {
         {githubURL ? <Button size="small" color="default" href={githubURL} aria-label="visit-external-website">
           <Icon className="fas fa-external-link-alt"/>
         </Button> : null}
-        
+
         <Button size="small" color="default" href={githubURL} aria-label="github">
           <Icon className="fa fa-github"/>
         </Button>
-        
+
       </CardActions>
     </Card>
   );
