@@ -133,6 +133,23 @@ function App() {
       );
     } else if (/^clear$/i.test(fullCommand)) {
       setTerminalOutput([]);
+    } else if (/^help$/i.test(fullCommand)) {
+      outputContent = (
+        <div style={{ lineHeight: 1.7 }}>
+          <div><span className="color-yellow">Available commands:</span></div>
+          <div><span className="color-cyan">whoami</span>: Show your name and headline</div>
+          <div><span className="color-cyan">ls skills</span>: List all skills</div>
+          <div><span className="color-cyan">cat experience</span>: Show work experience</div>
+          <div><span className="color-cyan">education</span>: Show education details</div>
+          <div><span className="color-cyan">ls projects</span>: List all projects</div>
+          <div><span className="color-cyan">contact</span>: Show LinkedIn, email, and GitHub</div>
+          <div><span className="color-cyan">contact --linkedin</span>: Show only LinkedIn link</div>
+          <div><span className="color-cyan">contact --email</span>: Show only email</div>
+          <div><span className="color-cyan">contact --github</span>: Show only GitHub link</div>
+          <div><span className="color-cyan">clear</span>: Clear the terminal</div>
+          <div><span className="color-cyan">help</span>: Show this help message</div>
+        </div>
+      );
     } else {
       outputContent = `<span class="color-red">Command not found: ${fullCommand}</span>`;
     }
