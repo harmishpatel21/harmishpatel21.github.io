@@ -1,0 +1,189 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.terminal-container {
+  width: 100%;
+  max-width: 900px;
+  height: 70vh;
+  background-color: #1e1e2e; /* Arch Linux terminal dark background */
+  border: 1px solid #3c3c3c; /* A slightly softer border for the terminal window */
+  padding: 15px;
+  overflow-y: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1em; /* Master font size for all terminal content */
+  color: #CDD6F4;
+  box-shadow: 0 0 15px rgba(137, 220, 235, 0.3);
+  border-radius: 6px; /* Slightly rounded corners */
+  line-height: 1.5;
+  flex-direction: column;
+  display: flex;
+}
+
+.terminal-line {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: 2px;
+  font-size: 1em; /* Explicitly set for consistency */
+}
+
+.prompt-line {
+  display: flex;
+  align-items: baseline;
+  line-height: 1.5;
+}
+
+.prompt-username {
+  color: #89B4FA;
+}
+
+.prompt-at {
+  color: #CDD6F4;
+}
+
+.prompt-hostname {
+  color: #F38BA8;
+}
+
+.prompt-path {
+  color: #A6E3A1;
+  margin-right: 8px;
+}
+
+/* Removed @keyframes blink since we're using native caret */
+
+.command-input-field {
+  background: transparent !important;
+  background-color: red !important; /* Temporarily set to red for diagnosis */
+  border: none !important;
+  outline: none !important;
+  color: #F9E2AF;
+  flex-grow: 1;
+  font-family: inherit;
+  font-size: 1em;
+  caret-color: transparent; /* Hide the default caret */
+  padding: 0 !important;
+  margin: 0 !important; /* Ensure no default margin */
+  margin-left: 0;
+  min-width: 0;
+  position: relative; /* Needed for positioning the custom caret */
+  box-shadow: none !important; /* Ensure no box-shadow is applied */
+  -webkit-appearance: none; /* For Safari/Chrome */
+  -moz-appearance: none; /* For Firefox */
+  appearance: none; /* Standard property */
+  vertical-align: baseline !important; /* Ensure alignment doesn't add space */
+  height: auto !important; /* Ensure height is not fixed by browser defaults */
+  width: auto !important; /* Ensure width is not fixed by browser defaults */
+
+  /* Aggressive reset for any remaining visual artifacts */
+  background-image: none !important;
+  background: none !important; /* Ensure no image or default background */
+  background-color: #1e1e2e !important; /* Explicitly set to terminal background */
+  border-radius: 0 !important; /* Ensure no rounded corners */
+  resize: none !important; /* Prevent resize handles */
+  -webkit-text-fill-color: inherit !important; /* Ensure text color is respected */
+  -webkit-box-shadow: none !important; /* For webkit-specific box shadow */
+}
+
+.command-input-field:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.command-input-field.typing::after {
+  content: '█'; /* Block character for the cursor */
+  color: #F5E0DC; /* Cursor Color */
+  animation: blink-caret 1s infinite steps(1, start);
+  position: absolute;
+  top: 0;
+  right: 0; /* Adjust as needed */
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+@keyframes blink-caret {
+  50% { opacity: 0; }
+}
+
+.project-list p {
+  margin: 2px 0;
+  cursor: pointer;
+  color: #89DCEB;
+  font-size: 1em; /* Explicitly set for consistency */
+}
+
+.project-list p:hover {
+  text-decoration: underline;
+}
+
+/* Arch Linux inspired syntax highlighting colors */
+.color-green { color: #A6E3A1; }
+.color-blue { color: #89DCEB; }
+.color-red { color: #F38BA8; }
+.color-yellow { color: #F9E2AF; }
+.color-cyan { color: #94E2D5; }
+.color-magenta { color: #CBA6F7; }
+.color-gray { color: #6C7086; }
+
+/* Removed all font-size overrides in media queries */
+@media (max-width: 768px) {
+  .terminal-container {
+    height: 85vh;
+    padding: 10px;
+  }
+}
+
+.command-input-line {
+  display: flex;
+  align-items: baseline;
+  line-height: 1.5;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: #1e1e2e !important; /* Ensure background matches terminal */
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.invisible-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
+  border: none;
+  background: none;
+  color: transparent;
+  caret-color: transparent;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 1ch;
+  height: 1em;
+  background: none;
+  color: #F5E0DC;
+  font-weight: bold;
+  animation: blink-caret 1s steps(1) infinite;
+  vertical-align: bottom;
+  content: '';
+}
+.blinking-cursor::after {
+  content: '█';
+}
+
+@keyframes blink-caret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-gap {
+  height: 1em;
+}

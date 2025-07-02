@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #CDD6F4;
+  background-color: #1e1e2e;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #61dafb;
+  text-decoration: none;
+}
+a:hover {
+  color: #61dafb;
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  background-color: #1e1e2e;
+  color: #CDD6F4;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  /* Will be restyled or removed if not used */
+}
+
+@media (prefers-color-scheme: light) {
+  /* Removing light mode specific overrides */
+}
