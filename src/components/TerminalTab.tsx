@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import portfolioData from '../data/portfolioData.json';
+// import portfolioData from '../data/portfolioData.json';
 
 const TerminalTab: React.FC = () => {
   const [currentTime, setCurrentTime] = useState<string>('');
-  const userName = portfolioData.data.firstName;
-  const userHeadline = portfolioData.data.position;
+  // const userName = portfolioData.data.firstName;
+  // const userHeadline = portfolioData.data.position;
 
   useEffect(() => {
     const updateTime = () => {

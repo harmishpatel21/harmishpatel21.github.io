@@ -180,15 +180,19 @@ function App() {
   };
 
   useEffect(() => {
-    if (terminalRef.current) {
-      terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
-    }
     // Add Introduction and initial prompt to terminalOutput
     setTerminalOutput([
       <Introduction key="intro" />,
-      // <pre key="initial-prompt" className="terminal-line prompt-line"><span className="prompt-username">guest</span><span className="prompt-at">@</span><span className="prompt-hostname">archlinux</span><span className="prompt-path">:~$</span></pre>
+
     ]);
   }, []);
+
+  // Auto-scroll to bottom whenever terminalOutput changes
+  useEffect(() => {
+    if (terminalRef.current) {
+      terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+    }
+  }, [terminalOutput]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
