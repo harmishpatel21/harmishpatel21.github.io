@@ -2,7 +2,8 @@
   "data": {
     "firstName": "Harmish",
     "lastName": "Patel",
-    "headline": "Data Scientist who takes pride in building models that translate data points into business insights.",
+    "position": "Senior Data Scientist",
+    "headline": "Senior Data Scientist with 4 years of hands-on experience designing and deploying end-to-end data solutions. Skilled in building reliable data pipelines using Python, PySpark, and SQL on distributed systems. Proven ability to develop and productionize machine learning models using PyTorch, TensorFlow, and Transformers. Led multiple cross-functional projects from planning to delivery, translating complex data into decisions that drive real impact. Known for clear communication, ownership, and delivering results without hand-holding.",
     "profilePic": "profilePic.png",
     "email": "harmishp21@gmail.com",
     "linkedin": "https://www.linkedin.com/in/harmish2111patel/",

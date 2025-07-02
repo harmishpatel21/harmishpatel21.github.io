@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css'
 import portfolioData from './data/portfolioData.json';
+import Footer from './components/Footer';
+import Introduction from './components/Introduction';
+import TerminalTab from './components/TerminalTab';
 
 function App() {
   const [terminalOutput, setTerminalOutput] = useState<React.ReactNode[]>([]);
@@ -9,11 +12,12 @@ function App() {
   const [historyIndex, setHistoryIndex] = useState<number>(-1);
   const terminalRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [isInputFocused, setIsInputFocused] = useState<boolean>(false);
 
   const handleCommand = async (command: string) => {
     const fullCommand = command.trim();
     if (!fullCommand) {
-      setTerminalOutput(prev => [...prev, <pre className="terminal-line prompt-line"><span className="prompt-username">harmish</span><span className="prompt-at">@</span><span className="prompt-hostname">archlinux</span><span className="prompt-path">:~$</span></pre>]);
+      setTerminalOutput(prev => [...prev, <pre className="terminal-line prompt-line"><span className="prompt-username">guest</span><span className="prompt-at">@</span><span className="prompt-hostname">portfolio</span><span className="prompt-path">:~$</span></pre>]);
       setCurrentCommand('');
       return;
     }
@@ -21,7 +25,7 @@ function App() {
     setCommandHistory(prev => [...prev, fullCommand]);
     setHistoryIndex(-1);
 
-    setTerminalOutput(prev => [...prev, <pre className="terminal-line prompt-line"><span className="prompt-username">harmish</span><span className="prompt-at">@</span><span className="prompt-hostname">archlinux</span><span className="prompt-path">:~$</span> <span className="color-yellow">{fullCommand}</span></pre>]);
+    setTerminalOutput(prev => [...prev, <pre className="terminal-line prompt-line"><span className="prompt-username">guest</span><span className="prompt-at">@</span><span className="prompt-hostname">portfolio</span><span className="prompt-path">:~$</span> <span className="color-yellow">{fullCommand}</span></pre>]);
     setCurrentCommand('');
 
     let outputContent: string | React.JSX.Element | undefined;
@@ -179,7 +183,12 @@ function App() {
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
     }
-  }, [terminalOutput]);
+    // Add Introduction and initial prompt to terminalOutput
+    setTerminalOutput([
+      <Introduction key="intro" />,
+      // <pre key="initial-prompt" className="terminal-line prompt-line"><span className="prompt-username">guest</span><span className="prompt-at">@</span><span className="prompt-hostname">archlinux</span><span className="prompt-path">:~$</span></pre>
+    ]);
+  }, []);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
@@ -205,21 +214,29 @@ function App() {
     }
   };
 
+  const focusInput = () => {
+    inputRef.current?.focus();
+    setIsInputFocused(true);
+  };
+
   return (
     <div className="App">
-      <div className="terminal-container" ref={terminalRef}>
+      <div className="terminal-container" ref={terminalRef} onClick={focusInput}>
+        <TerminalTab />
         {terminalOutput.map((line, index) => (
           <div key={index}>{line}</div>
         ))}
         <div className="command-input-line" style={{position: 'relative'}}>
-            <span className="prompt-username">harmish</span><span className="prompt-at">@</span><span className="prompt-hostname">archlinux</span><span className="prompt-path">:~$</span>
+            <span className="prompt-username">guest</span><span className="prompt-at">@</span><span className="prompt-hostname">portfolio</span><span className="prompt-path">:~$</span>
             <span className="typed-command">{currentCommand}</span>
-            <span className="blinking-cursor" />
+            {isInputFocused && <span className="blinking-cursor" />}
             <input
               type="text"
               value={currentCommand}
               onChange={(e) => setCurrentCommand(e.target.value)}
               onKeyDown={handleKeyDown}
+              onFocus={() => setIsInputFocused(true)}
+              onBlur={() => setIsInputFocused(false)}
               autoFocus
               spellCheck="false"
               className="terminal-input-field invisible-input"
@@ -240,8 +257,9 @@ function App() {
             />
         </div>
       </div>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
