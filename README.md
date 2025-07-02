@@ -1,69 +1,119 @@
-# React + TypeScript + Vite
+# Portfolio Terminal - Deploy to GitHub Pages
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This guide will help you deploy your Vite + React portfolio terminal to GitHub Pages.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 1. Prerequisites
 
-## Expanding the ESLint configuration
+-   Node.js and npm installed
+-   GitHub repository created and linked to your local project
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 2. Install Dependencies
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 3. Set the Correct `base` in `vite.config.ts`
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+-   **If your repo is named `harmishpatel21.github.io` (user/organization page):**
+    ```ts
+    // vite.config.ts
+    export default defineConfig({
+        plugins: [react()],
+        base: "/",
+    });
+    ```
+-   **If your repo is a project page (e.g., `my-portfolio`):**
+    ```ts
+    export default defineConfig({
+        plugins: [react()],
+        base: "/my-portfolio/",
+    });
+    ```
+
+---
+
+## 4. Add Deploy Scripts
+
+Install the `gh-pages` package:
+
 ```
+npm install --save-dev gh-pages
+```
+
+Add these scripts to your `package.json`:
+
+```json
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}
+```
+
+---
+
+## 5. Build and Deploy
+
+```
+npm run deploy
+```
+
+This will build your project and push the `dist` folder to the `gh-pages` branch.
+
+---
+
+## 6. Configure GitHub Pages
+
+-   Go to your repository on GitHub
+-   Go to **Settings** → **Pages**
+-   Set the source to `gh-pages` branch and `/ (root)`
+
+---
+
+## 7. Access Your Site
+
+-   If user/organization page: `https://harmishpatel21.github.io/`
+-   If project page: `https://harmishpatel21.github.io/<repo-name>/`
+
+---
+
+## 8. Troubleshooting
+
+-   If you see MIME type errors, double-check your `base` in `vite.config.ts` and redeploy.
+-   Clear your browser cache with `Ctrl+Shift+R` or `Cmd+Shift+R`.
+-   Make sure GitHub Pages is set to the correct branch and folder.
+
+---
+
+## 9. Remove Remote Origin (if needed)
+
+```
+git remote remove origin
+```
+
+---
+
+## 10. Add a New Remote (if needed)
+
+```
+git remote add origin <new-repo-url>
+```
+
+---
+
+## 11. Clean Old gh-pages Branch (if needed)
+
+```
+npx gh-pages-clean
+npm run deploy
+```
+
+---
+
+**Enjoy your deployed portfolio!**
