@@ -30,11 +30,6 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Copy Logo.png to public
-        run: |
-          mkdir -p public
-          cp src/assets/images/Logo.png public/Logo.png
-
       - name: Build
         run: npm run build
         env:
