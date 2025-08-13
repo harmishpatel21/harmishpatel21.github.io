@@ -30,6 +30,11 @@ jobs:
       - name: Install deps
         run: npm ci
 
+      - name: Use Logo.png as favicon
+        run: |
+          mkdir -p public
+          cp src/assets/images/Logo.png public/favicon.png
+
       - name: Prebuild pinned repos
         run: node scripts/fetch-pinned-repos.mjs
         env:
