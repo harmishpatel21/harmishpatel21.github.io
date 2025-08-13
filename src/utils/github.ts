@@ -8,6 +8,19 @@ type PinnedRepo = {
 };
 
 export async function fetchPinnedRepos(): Promise<Project[]> {
+  // 1) Try static prebuilt JSON first (generated in CI)
+  try {
+    const base = (import.meta as any).env?.BASE_URL || '/';
+    const staticRes = await fetch(`${base}data/pinned.json`, { cache: 'no-store' });
+    if (staticRes.ok) {
+      const projects = (await staticRes.json()) as Project[];
+      if (Array.isArray(projects) && projects.length > 0) return projects;
+    }
+  } catch {
+    // ignore and fall through to API-based attempts
+  }
+
+  // 2) Fallback to runtime GitHub API if a token is available (dev/local usage)
   const token = import.meta.env.VITE_GITHUB_TOKEN || localStorage.getItem('gh_token');
   const username = import.meta.env.VITE_GITHUB_USERNAME || '';
   if (!token) return [];
