@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Minimal Portfolio",
+    "description": "A minimalistic, accessible personal portfolio built with React + Vite.",
+    "url": "https://github.com/username/minimal-portfolio",
+    "techStack": ["React", "TypeScript", "Vite"]
+  },
+  {
+    "name": "API Toolkit",
+    "description": "Lightweight utilities for REST/GraphQL requests with caching.",
+    "url": "https://github.com/username/api-toolkit",
+    "techStack": ["TypeScript", "GraphQL"]
+  },
+  {
+    "name": "CSS System",
+    "description": "Token-based CSS variables and responsive utilities.",
+    "url": "https://github.com/username/css-system",
+    "techStack": ["CSS", "Design System"]
+  },
+  {
+    "name": "Blog Starter",
+    "description": "Static blog starter featuring Markdown and RSS.",
+    "url": "https://github.com/username/blog-starter",
+    "techStack": ["Node", "RSS"]
+  }
+]
+
+

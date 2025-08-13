@@ -1,0 +1,10 @@
+{
+  "Programming Languages": ["Python (Advanced)", "Go", "Scala"],
+  "AI/ML": ["PyTorch (Model Training)", "TensorFlow", "HuggingFace (NLP, Transformers)", "LLMs (Fine-tuning, RAG)", "LangChain"],
+  "MLOps": ["Docker", "FastAPI", "Git", "CI/CD", "AWS SageMaker (Model Deployment)", "Ollama"],
+  "Big Data": ["Apache Spark (PySpark)", "Kafka (Streaming)", "AWS (S3, EMR, Lambda, EC2, DynamoDB)"] ,
+  "Databases": ["SQL", "PostgreSQL (Query Optimization)", "MongoDB", "Neo4j (Graph DB)"] ,
+  "Visualization": ["Power BI", "Matplotlib", "Seaborn"]
+}
+
+

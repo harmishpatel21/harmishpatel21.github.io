@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Setting up Github Workflow, Pull Requests, Github Actions for CI/CD and Branch Management",
+    "link": "https://medium.com/@harmishp/setting-up-github-workflow-pull-requests-github-actions-for-ci-cd-and-branch-management-e3ee332c56ae",
+    
+    "excerpt": "Step-by-step guide to a clean Git workflow with protected branches and GitHub Actions CI/CD from PR to deploy."
+  },
+  {
+    "title": "ChatGPT Wrote This Article by OpenAI",
+    "link": "https://medium.com/@harmishp/chatgpt-wrote-this-article-by-openai-92ada509aff",
+   
+    "excerpt": "A practical look at using ChatGPT to draft articles, with prompts, strengths, and pitfalls of AI-assisted writing."
+  },
+  {
+    "title": "Producer and Consumer Samples for Apache Kafka",
+    "link": "https://medium.com/@harmishp/producer-and-consumer-samples-for-apache-kafka-74a560abe803",
+   
+    "excerpt": "Minimal Kafka producer/consumer examples showing message flow and basic configuration for quick start."
+  },
+  {
+    "title": "Apache Kafka: Set Up on a Local System",
+    "link": "https://medium.com/@harmishp/apache-kafka-set-up-on-a-local-system-890c48202e64",
+   
+    "excerpt": "Install and run Kafka locally with ZooKeeper, and verify with simple producer/consumer commands."
+  }
+]
+
+

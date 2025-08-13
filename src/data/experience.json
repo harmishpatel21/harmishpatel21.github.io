@@ -1,0 +1,70 @@
+[
+  {
+    "company": "ENTEGRA, Vaughan, ON, Canada",
+    "position": "Senior AI Data Scientist",
+    "dates": "Jan 2024 – Present",
+    "bullets": [
+      "Promoted to lead AI-driven initiatives, overseeing metal loss detection and chatbot development.",
+      "Deployed a metal loss detection system for pipelines using PyTorch & Detectron2, achieving 70% precision (+20% over baseline) and 83% recall, reducing overtime costs by 30%.",
+      "Built an offline RAG chatbot (Ollama + vector search) enabling instant retrieval of 200+ health and safety manuals via FastAPI, eliminating cloud-based API costs.",
+      "Skills: PySpark, Statistical Data Analysis, Machine Learning, SQL, Python"
+    ]
+  },
+  {
+    "company": "ENTEGRA, Vaughan, ON, Canada",
+    "position": "Data Scientist",
+    "dates": "Aug 2021 – Dec 2023", 
+    "bullets": [
+      "Developed an ensemble AI model (XGBoost + Neural Networks) for metal loss sizing, improving corrosion measurement accuracy by 30%.",
+      "Trained Level-3 data analysts on corrosion identification and defect depth estimation, reducing manual review by 25%."
+    ]
+  },
+  {
+    "company": "Walmart Canada, Windsor, ON, Canada",
+    "position": "Walmart Associate (Permanent Part-time)",
+    "dates": "Feb 2020 – Jun 2021",
+    "bullets": [
+      "Skills: Communication, Customer Relationship Management (CRM)"
+    ]
+  },
+  {
+    "company": "Communitech, ON, Canada",
+    "position": "Digital Marketing Coordinator (Contract Full-time)",
+    "dates": "Jan 2021 – Mar 2021",
+    "bullets": [
+      "Helped small and medium entrepreneur through FutureProof program funded by Canadian government.",
+      "Guided 6 clients with email marketing and SEO; established online presence on Shopify/Square and marketed products via Google AdSense and Facebook Ads.",
+      "Collaborated for market/competition research and automated processes with Python scripts, reducing manual hours."
+    ]
+  },
+  {
+    "company": "University of Windsor, Windsor, ON, Canada",
+    "position": "Data Scientist (Internship)",
+    "dates": "Sep 2020 – Dec 2020",
+    "bullets": [
+      "Designed an end-to-end deep learning OCR system for handwritten notes (~85% accuracy).",
+      "Used PyTorch pre-trained NLP transformers to generate abstractive summaries (ROUGE ~55%)."
+    ]
+  },
+  {
+    "company": "Embibe (Reliance), Bengaluru, IN",
+    "position": "Data Scientist",
+    "dates": "Dec 2018 – Jun 2019",
+    "bullets": [
+      "Designed a scalable AWS-based data pipeline (S3, EMR, DynamoDB) to process large datasets for academic knowledge graphs, enabling real-time data retrieval for 10,000+ users.",
+      "Optimized Wikipedia data processing with PySpark, reducing runtime by 20% and increasing throughput by 35%.",
+      "Built a keyword extraction system using Python, Pandas, and NLTK to extract 20,000+ educational concepts per textbook, improving content retrieval precision by 45%.",
+      "Skills: PySpark, Amazon Web Services (AWS), Python"
+    ]
+  },
+  {
+    "company": "ValeurHR, India",
+    "position": "Researcher & Development and Data Analytics Program (Internship)",
+    "dates": "May 2017 – Jun 2017",
+    "bullets": [
+      "Built a time-series prediction prototype on forex data using Python (Flask), ReactJS; performed data scraping via BeautifulSoup and fed LSTM for forecasting."
+    ]
+  }
+]
+
+
