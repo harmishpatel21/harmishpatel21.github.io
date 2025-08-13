@@ -36,6 +36,7 @@ jobs:
           # For user/organization pages (username.github.io) base should be '/'
           VITE_BASE: /
           # Non-sensitive config values. Anything with VITE_ is baked into the client bundle.
+          VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
           VITE_GITHUB_USERNAME: ${{ secrets.VITE_GITHUB_USERNAME }}
           VITE_LINKEDIN_USERNAME: ${{ secrets.VITE_LINKEDIN_USERNAME }}
           VITE_MEDIUM_USERNAME: ${{ secrets.VITE_MEDIUM_USERNAME }}
