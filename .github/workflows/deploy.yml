@@ -30,17 +30,10 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Use Logo.png as favicon
+      - name: Copy Logo.png to public
         run: |
           mkdir -p public
-          cp src/assets/images/Logo.png public/favicon.png
-
-      - name: Prebuild pinned repos
-        run: node scripts/fetch-pinned-repos.mjs
-        env:
-          PINNED_REPOS_USERNAME: ${{ secrets.VITE_GITHUB_USERNAME }}
-          # Use a fine-scoped classic token or a GitHub App token if needed
-          PINNED_REPOS_TOKEN: ${{ secrets.PINNED_REPOS_TOKEN }}
+          cp src/assets/images/Logo.png public/Logo.png
 
       - name: Build
         run: npm run build
@@ -49,6 +42,7 @@ jobs:
           VITE_BASE: /
           # Non-sensitive config values. Anything with VITE_ is baked into the client bundle.
           VITE_GITHUB_USERNAME: ${{ secrets.VITE_GITHUB_USERNAME }}
+          VITE_LINKEDIN_USERNAME: ${{ secrets.VITE_LINKEDIN_USERNAME }}
           VITE_MEDIUM_USERNAME: ${{ secrets.VITE_MEDIUM_USERNAME }}
           VITE_MEDIUM_PROXY: ${{ secrets.VITE_MEDIUM_PROXY }}
           VITE_LINKEDIN_CLIENT_ID: ${{ secrets.VITE_LINKEDIN_CLIENT_ID }}
