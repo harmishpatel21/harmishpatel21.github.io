@@ -27,21 +27,35 @@ const Education: React.FC = () => {
   }, [cachedKey]);
 
   return (
-    <section className="section" aria-labelledby="education-heading">
-      <h2 id="education-heading">Education</h2>
+    <section className="section education-section" aria-labelledby="education-heading">
+      <div className="section-header">
+        <h2 id="education-heading">Education</h2>
+        <div className="section-badge">Academic</div>
+      </div>
+      
       {loading && <div className="loading" role="status">Loading...</div>}
       {!loading && (
-        <div className="timeline" aria-label="Education timeline">
+        <div className="education-grid" aria-label="Education timeline">
           {entries.map((item, idx) => (
-            <div className="timeline-item" key={`${item.school}-${idx}`}>
-              <h3><strong>{item.school}</strong></h3>
-              <p><em>{item.degree}</em></p>
-              <p>{item.dates}</p>
-              <ul>
-                {item.bullets.map((b, i) => (
-                  <li key={i}>{b}</li>
-                ))}
-              </ul>
+            <div className="education-card" key={`${item.school}-${idx}`}>
+              <div className="education-header">
+                <div className="school-info">
+                  <h3 className="school-name">{item.school}</h3>
+                  <p className="degree-title">{item.degree}</p>
+                  <span className="dates">{item.dates}</span>
+                </div>
+                <div className="education-icon">🎓</div>
+              </div>
+              <div className="education-content">
+                <ul className="achievement-list">
+                  {item.bullets.map((b, i) => (
+                    <li key={i} className="achievement-item">
+                      <span className="bullet-point">•</span>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

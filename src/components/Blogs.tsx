@@ -43,17 +43,33 @@ const Blogs: React.FC = () => {
   }, [cachedKey]);
 
   return (
-    <section className="section" aria-labelledby="blogs-heading">
-      <h2 id="blogs-heading">Blogs</h2>
+    <section className="section blogs-section" aria-labelledby="blogs-heading">
+      <div className="section-header">
+        <h2 id="blogs-heading">Blogs</h2>
+        <div className="section-badge">Writing</div>
+      </div>
+      
       {loading && <div className="loading" role="status">Loading...</div>}
-      {error && <p role="alert">{error}</p>}
+      {error && <p role="alert" className="error-message">{error}</p>}
       {!loading && (
-        <div className="blogs-list">
+        <div className="blogs-grid">
           {posts.map((post) => (
-            <article key={post.link} className="blog-post">
-              <h3><a href={post.link} target="_blank" rel="noopener noreferrer">{post.title}</a></h3>
-              {/* <p><small>{new Date(post.pubDate).toLocaleDateString()}</small></p> */}
-              <p>{post.excerpt}</p>
+            <article key={post.link} className="blog-card">
+              <div className="blog-header">
+                <h3 className="blog-title">
+                  <a href={post.link} target="_blank" rel="noopener noreferrer">{post.title}</a>
+                </h3>
+                <div className="blog-icon">✍️</div>
+              </div>
+              <div className="blog-content">
+                <p className="blog-excerpt">{post.excerpt}</p>
+                <div className="blog-meta">
+                  <span className="blog-date">{new Date(post.pubDate).toLocaleDateString()}</span>
+                  <a href={post.link} target="_blank" rel="noopener noreferrer" className="read-more">
+                    Read More →
+                  </a>
+                </div>
+              </div>
             </article>
           ))}
         </div>

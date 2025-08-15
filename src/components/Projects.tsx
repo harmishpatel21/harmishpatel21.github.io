@@ -43,16 +43,25 @@ const Projects: React.FC = () => {
   }, [cachedKey]);
 
   return (
-    <section className="section" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
+    <section className="section projects-section" aria-labelledby="projects-heading">
+      <div className="section-header">
+        <h2 id="projects-heading">Projects</h2>
+        <div className="section-badge">Portfolio</div>
+      </div>
+      
       {loading && <div className="loading" role="status">Loading...</div>}
-      {error && <p role="alert">{error}</p>}
+      {error && <p role="alert" className="error-message">{error}</p>}
       {!loading && (
-        <div className="projects-list">
+        <div className="projects-grid">
           {projects.map((p) => (
             <div key={p.url} className="project-card">
-              <h3><a href={p.url} target="_blank" rel="noopener noreferrer">{p.name}</a></h3>
-              <p>{p.description}</p>
+              <div className="project-header">
+                <h3 className="project-title">
+                  <a href={p.url} target="_blank" rel="noopener noreferrer">{p.name}</a>
+                </h3>
+                <div className="project-icon">🚀</div>
+              </div>
+              <p className="project-description">{p.description}</p>
               <div className="tech-stack">
                 {p.techStack.map((t, idx) => (
                   <span className="tech-badge" key={`${p.name}-${t}-${idx}`}>{t}</span>

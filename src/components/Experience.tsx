@@ -34,22 +34,36 @@ const Experience: React.FC = () => {
   }, [cachedKey]);
 
   return (
-    <section className="section" aria-labelledby="experience-heading">
-      <h2 id="experience-heading">Experience</h2>
+    <section className="section experience-section" aria-labelledby="experience-heading">
+      <div className="section-header">
+        <h2 id="experience-heading">Experience</h2>
+        <div className="section-badge">Career Journey</div>
+      </div>
+      
       {loading && <div className="loading" role="status">Loading...</div>}
-      {error && <p role="alert">{error}</p>}
+      {error && <p role="alert" className="error-message">{error}</p>}
       {!loading && (
-        <div className="timeline" aria-label="Career timeline">
+        <div className="experience-grid" aria-label="Career timeline">
           {entries.map((item, idx) => (
-            <div className="timeline-item" key={`${item.company}-${idx}`}>
-              <h3><strong>{item.company}</strong></h3>
-              <p><em>{item.position}</em></p>
-              <p>{item.dates}</p>
-              <ul>
-                {item.bullets.map((b, i) => (
-                  <li key={i}>{b}</li>
-                ))}
-              </ul>
+            <div className="experience-card" key={`${item.company}-${idx}`}>
+              <div className="experience-header">
+                <div className="company-info">
+                  <h3 className="company-name">{item.company}</h3>
+                  <p className="position-title">{item.position}</p>
+                  <span className="dates">{item.dates}</span>
+                </div>
+                <div className="experience-icon">💼</div>
+              </div>
+              <div className="experience-content">
+                <ul className="achievement-list">
+                  {item.bullets.map((b, i) => (
+                    <li key={i} className="achievement-item">
+                      <span className="bullet-point">•</span>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
