@@ -99,7 +99,23 @@ a:focus { outline: 2px dashed var(--accent-color); outline-offset: 2px; }
   gap: 2rem;
   min-height: 100vh;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
+
+/* Themed scrollbars for sidebar (WebKit-based browsers) */
+.sidebar::-webkit-scrollbar { width: 10px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.sidebar::-webkit-scrollbar-thumb:hover { background-color: var(--accent-color); }
+
+/* Firefox scrollbar */
+.sidebar { scrollbar-width: thin; scrollbar-color: var(--border-color) transparent; }
 
 /* Profile Section */
 .profile-section {
@@ -415,6 +431,8 @@ a:focus { outline: 2px dashed var(--accent-color); outline-offset: 2px; }
   .sidebar {
     padding: 1rem;
     gap: 1.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   
   .hamburger {
@@ -1179,7 +1197,7 @@ a:focus { outline: 2px dashed var(--accent-color); outline-offset: 2px; }
 /* Layout responsive */
 @media (min-width: 768px) {
 	.layout { grid-template-columns: 260px 1fr; }
-	.sidebar { position: sticky; top: 0; height: 100vh; overflow: auto; }
+	.sidebar { position: sticky; top: 0; height: 100vh; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; }
 	.nav { display: block !important; }
     .profile img { width: 120px; height: 120px; }
 }

@@ -64,7 +64,7 @@ const Blogs: React.FC = () => {
               <div className="blog-content">
                 <p className="blog-excerpt">{post.excerpt}</p>
                 <div className="blog-meta">
-                  <span className="blog-date">{new Date(post.pubDate).toLocaleDateString()}</span>
+                  {/* <span className="blog-date">{new Date(post.pubDate).toLocaleDateString()}</span> */}
                   <a href={post.link} target="_blank" rel="noopener noreferrer" className="read-more">
                     Read More →
                   </a>
